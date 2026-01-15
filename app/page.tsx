@@ -3,6 +3,7 @@ import Image from "next/image";
 import CardWho from "@/components/card-who";
 import Header from "@/components/header";
 import ServicesCarousel from "@/components/servicesCarousel";
+import ProjectsCarousel from "@/components/projectsCarousel";
 
 export default function Home() {
     const acumulator = [1,2,3,4];
@@ -82,7 +83,7 @@ export default function Home() {
                     </div>
                 </section>
 
-
+                {/*Nossos Serviços*/}
                 <section className="bg-[#0B0E10] min-h-[400px] w-full flex flex-col justify-center items-center overflow-hidden py-5 lg:py-10">
                     <h1 className="text-[#DAA520] text-[17px] lg:text-[22px] text-center lg:text-start font-medium px-7 lg:px-10">NOSSOS SERVIÇOS</h1>
                     <h2 className="text-white text-center font-bold mt-2 lg:text-[30px]">
@@ -94,9 +95,12 @@ export default function Home() {
                     <img src="/line.svg" alt="Line Icon" height={10} width={150} loading="eager" decoding="async" fetchPriority="low" className="hidden lg:block mt-2"/>
 
                     <ServicesCarousel/>
+                    <button className="hidden lg:block text-[#0B0E10] bg-[#DAA520] mt-10 font-bold text-[17px] py-1 w-[300px] transition hover:scale-105">
+                        CONHEÇA NOSSOS SERVIÇOS
+                    </button>
                 </section>
 
-
+                {/*Portfólio*/}
                 <section className="bg-[#06090B] min-h-[400px] w-full px-7 lg:px-10 py-5 lg:py-10 flex flex-col justify-center items-center">
                     <h1 className="text-[#DAA520] text-[17px] lg:text-[22px] text-center lg:text-start font-medium px-7 lg:px-10">PORTFÓLIO </h1>
                     <h2 className="text-white text-center font-bold mt-2 lg:text-[30px]">
@@ -104,9 +108,13 @@ export default function Home() {
                     </h2>
                     <img src="/line.svg" alt="Line Icon" height={10} width={100 } loading="eager" decoding="async" fetchPriority="low" className="lg:hidden"/>
                     <img src="/line.svg" alt="Line Icon" height={10} width={150} loading="eager" decoding="async" fetchPriority="low" className="hidden lg:block mt-2"/>
+                    <ProjectsCarousel/>
+                    <button className="hidden lg:block text-[#0B0E10] bg-[#DAA520] mt-10 font-bold text-[17px] py-1 w-[300px] transition hover:scale-105">
+                        VER PORTFÓLIO COMPLETO
+                    </button>
                 </section>
 
-
+                {/*Parceiros*/}
                 <section className="bg-[#0B0E10] min-h-[400px] w-full px-7 lg:px-10 py-5 lg:py-10 flex flex-col justify-center items-center">
                     <h1 className="text-[#DAA520] text-[17px] lg:text-[22px] text-center lg:text-start font-medium px-7 lg:px-10">PARCEIROS </h1>
                     <h2 className="text-white text-center font-bold mt-2 lg:text-[30px]">
@@ -122,34 +130,55 @@ export default function Home() {
                     <p className="text-[#D8D8D8] text-[12px] lg:text-[16px] text-center mt-5 lg:mx-[250px]">Mantemos parcerias construídas com base na confiança, na transparência e no compromisso com a qualidade. Trabalhamos ao lado de profissionais e empresas que compartilham dos mesmos valores e da busca contínua por soluções inovadoras e eficientes.</p>
                 </section>
 
-
-                <section className="bg-[#010101] min-h-[400px] w-full px-7 lg:px-10 py-5 lg:py-10">
+                {/*Fale Conosco*/}
+                <section className="bg-[#010101] w-full px-7 lg:px-10 py-5 lg:py-10">
                     <h1 className="text-[#DAA520] text-[17px] lg:text-[22px] lg:text-start font-medium ">FALE CONCOSCO</h1>
-                    <div className="lg:max-w-[390px]">
-                        <h2 className="text-white font-bold mt-2 lg:text-[30px]">
-                            Pronto para  <span className="text-[#DAA520]">Transformar</span> <br className="hidden lg:block"/> seu Espaço
-                        </h2>
-                        <img src="/lastLine.svg" alt="Line Icon" height={5} width={205} loading="eager" decoding="async" fetchPriority="low" className="lg:hidden"/>
-                        <img src="/lastLine.svg" alt="Line Icon" height={10} width={180} loading="eager" decoding="async" fetchPriority="low" className="hidden lg:block mt-2"/>
-                        <p className="text-[#D8D8D8] text-[12px] lg:text-[16px] mt-2 lg:text-justify">Entre em contato conosco para uma consulta personalizada. Nossa equipe está pronta para entender suas necessidades e apresentar as melhores soluções.</p>
-                        <div className=" flex flex-wrap justify-center lg:justify-start items-center lg:items-start lg:flex-col mt-5 gap-1 lg:gap-5">
-                            {cards.map((card, index)=>(
-                                <article key={index} className="flex h-[50px] lg:h-auto w-[150px] lg:w-auto">
-                                    <div className="h-[30px] lg:h-[50px] w-[30px] lg:w-[50px] bg-[#DAA520] rounded-md"/>
-                                    <div className="text-white ml-2">
-                                        <h1 className="text-[10px] lg:text-[16px] font-bold">{card.title}</h1>
-                                        <h2 className="text-[9px] lg:text-[15px]">{card.subtitle}</h2>
-                                    </div>
-                                </article>
-                            ))}
+                    <div className="lg:flex justify-between">
+                        <div className="lg:max-w-[390px]">
+                            <h2 className="text-white font-bold mt-2 lg:text-[30px]">
+                                Pronto para  <span className="text-[#DAA520]">Transformar</span> <br className="hidden lg:block"/> seu Espaço
+                            </h2>
+                            <img src="/lastLine.svg" alt="Line Icon" height={5} width={205} loading="eager" decoding="async" fetchPriority="low" className="lg:hidden"/>
+                            <img src="/lastLine.svg" alt="Line Icon" height={10} width={180} loading="eager" decoding="async" fetchPriority="low" className="hidden lg:block mt-2"/>
+                            <p className="text-[#D8D8D8] text-[12px] lg:text-[16px] mt-2 lg:text-justify">Entre em contato conosco para uma consulta personalizada. Nossa equipe está pronta para entender suas necessidades e apresentar as melhores soluções.</p>
+                            <div className=" flex flex-wrap justify-center lg:justify-start items-center lg:items-start lg:flex-col mt-5 gap-1 lg:gap-5">
+                                {cards.map((card, index)=>(
+                                    <article key={index} className="flex h-[50px] lg:h-auto w-[150px] lg:w-auto">
+                                        <div className="h-[30px] lg:h-[50px] w-[30px] lg:w-[50px] bg-[#DAA520] rounded-md"/>
+                                        <div className="text-white ml-2">
+                                            <h1 className="text-[10px] lg:text-[16px] font-bold">{card.title}</h1>
+                                            <h2 className="text-[9px] lg:text-[15px]">{card.subtitle}</h2>
+                                        </div>
+                                    </article>
+                                ))}
+                            </div>
                         </div>
-                    </div>
-                    <div>
-
-                    </div>
+                        <form action="" className="px-7 pb-7 pt-3.5 lg:py-2 border border-[#1F1F1F] bg-[#0E1011] flex flex-col gap-3 rounded-lg lg:min-w-[500px] lg:justify-center">
+                            <div>
+                                <label htmlFor="name" className="text-[#D8D8D8] font-bold text-[9.5px] lg:text-[14px]">Nome Completo</label>
+                                <input type="text" id="name" placeholder="Seu nome" className="w-full border border-[#464646] bg-[#0E1011] rounded-md text-[#D8D8D8] mt-1.5 pl-2 text-[9.5px] lg:text-[14px] h-[30px] lg:h-[45px] focus:outline-none"/>
+                            </div>
+                            <div className="grid grid-cols-2 gap-4">
+                                <div className="flex flex-col">
+                                    <label htmlFor="email" className="text-[#D8D8D8] font-bold text-[9.5px] lg:text-[14px]">E-mail</label>
+                                    <input type="email" id="email" placeholder="seu@email.com" className="border border-[#464646] bg-[#0E1011] rounded-md text-[#D8D8D8] pl-2 mt-1.5 text-[9.5px] lg:text-[14px] h-[30px] lg:h-[45px] focus:outline-none"/>
+                                </div>
+                                <div className="flex flex-col">
+                                    <label htmlFor="phone number" className="text-[#D8D8D8] font-bold text-[9.5px] lg:text-[14px]">Telefone</label>
+                                    <input type="tel" id="phone number" placeholder="(61) 99999-9999" className="border border-[#464646] bg-[#0E1011] rounded-md text-[#D8D8D8] pl-2 mt-1.5 text-[9.5px] lg:text-[14px] h-[30px] lg:h-[45px] focus:outline-none"/>
+                                </div>
+                            </div>
+                            <div>
+                                <label htmlFor="message" className="text-[#D8D8D8] font-bold text-[9.5px] lg:text-[14px]">Mensagem</label>
+                                <textarea name="message" id="message" placeholder="Conte-nos sobre seu projeto:" className="w-full border border-[#464646] bg-[#0E1011] rounded-md resize-none text-[#D8D8D8] p-2 mt-1.5 text-[9.5px] lg:text-[14px] lg:h-[125px] focus:outline-none"></textarea>
+                            </div>
+                            <button type="submit" className="w-full bg-[#DAA520] py-1 cursor-pointer text-[12px] lg:text-[17px] text-[#0E1011] font-bold" > 
+                                ENVIAR MENSAGEM 
+                            </button>
+                            <p className="text-center text-[7px] lg:text-[10px] text-[#D8D8D8]/55">Respondemos em até 24 horas úteis.</p>
+                            </form>
+                        </div>
                 </section>
-
-
             </main>
         </>
     );

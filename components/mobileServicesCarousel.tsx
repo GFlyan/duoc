@@ -1,6 +1,6 @@
 "use client";
 
-import {PrimaryCard, SecondaryCard} from "@/components/card";
+import {PrimaryServiceCard, SecondaryServiceCard} from "@/components/serviceCard";
 import { useEffect, useState } from "react";
 import CircleComponent from "@/components/circle";
 
@@ -97,7 +97,7 @@ const ListComponents = [
           <button onClick={() => handleChangePrevious()} className={(left|| right)?"hidden" : "absolute left-[100px] z-40 h-[175px] w-[70px] cursor-pointer"}>
           </button> 
           <div className={right? "relative left-[100px] z-20 transition duration-350 translate-x-[82.5px] scale-x-[1.15] scale-y-[1.28]" : left ? "relative left-[100px] z-0 transition duration-350 translate-x-14 blur-[1.25px]" : "relative left-[100px] z-10 blur-[1.25px]"}>
-            <SecondaryCard
+            <SecondaryServiceCard
               title={ListComponents[latePos].title} 
               text={ListComponents[latePos].text} 
               item1={ListComponents[latePos].item1}
@@ -108,7 +108,7 @@ const ListComponents = [
               />
           </div>
           <div className={right ? "relative z-10 transition duration-350 translate-x-[82.5px] blur-[1.25px] scale-[0.79]" : left ? "relative z-20 transition duration-350 -translate-x-[82.5px] blur-[1.5px] scale-[0.79]" : "relative z-20 flex"}>
-            <PrimaryCard
+            <PrimaryServiceCard
               title={ListComponents[mainPos].title} 
               text={ListComponents[mainPos].text} 
               item1={ListComponents[mainPos].item1}
@@ -118,7 +118,7 @@ const ListComponents = [
               imageAlt={ListComponents[mainPos].imageAlt}/> 
           </div>
           <div className={right? "relative right-[100px] z-0 transition duration-350 -translate-x-[82.5px] blur-[1.25px]" : left ? "relative right-[100px] z-20 transition duration-350 -translate-x-[82.5px] scale-x-[1.15] scale-y-[1.28]" : "relative right-[100px] z-10 blur-[1.25px]"}>
-            <SecondaryCard
+            <SecondaryServiceCard
             title={ListComponents[nextPos].title} 
             text={ListComponents[nextPos].text} 
             item1={ListComponents[nextPos].item1}
@@ -128,7 +128,7 @@ const ListComponents = [
             imageAlt={ListComponents[nextPos].imageAlt}/>
           </div>
           <div className={right?"absolute z-0 transition -translate-x-[82.5px] blur-[1.25px]": left?"absolute z-0 transition translate-x-[82.5px] blur-[1.25px]": "hidden"}>
-            <SecondaryCard 
+            <SecondaryServiceCard 
               title={ListComponents[hiddenPos].title} 
               text={ListComponents[hiddenPos].text} 
               item1={ListComponents[hiddenPos].item1}
