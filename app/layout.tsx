@@ -2,6 +2,9 @@ import { montserrat } from '@/app/ui/fonts';
 import type { Metadata } from "next";
 import "./globals.css";
 
+import Header from "@/components/header";
+
+
 const defaultUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
   : "http://localhost:3000";
@@ -15,7 +18,8 @@ export const metadata: Metadata = {
 export default function RootLayout({children,}: Readonly<{children: React.ReactNode;}>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${montserrat.className} antialiased h-auto w-full`} >
+      <body className={`${montserrat.className} antialiased h-auto w-full relative`} >
+        <Header/>
         {children}
       </body>
     </html>

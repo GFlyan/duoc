@@ -1,11 +1,13 @@
 
 import Image from "next/image";
+import Link from "next/link";
+import HeroButtons from "@/components/heroButtons";
 import CardWho from "@/components/card-who";
-import Header from "@/components/header";
 import ServicesCarousel from "@/components/servicesCarousel";
 import ProjectsCarousel from "@/components/projectsCarousel";
 
 export default function Home() {
+
     const acumulator = [1,2,3,4];
     const cards = [
         {title: "Localização", subtitle: "Brasília, Distrito Federal"},
@@ -13,32 +15,23 @@ export default function Home() {
         {title: "WhatsApp", subtitle: "(61) 99999-9999"},
         {title: "E-mail", subtitle: "contato@duoc.com.br"},
     ]
+
     return(
-        <>  
-            <div className="relative w-full h-[360px] lg:h-[650px]">
-                <Image src="/hero-desktop.webp" alt="Hero Image" fill priority fetchPriority="high" className="" sizes="100vw"/>
-                <div className="absolute top-0 left-0 w-full">
-                    <Header/>
-                </div>
-                <section className="absolute top-[125px] lg:top-[200px] w-full px-7 lg:px-10">
-                    <h1 className="text-white text-[32px] lg:text-[75px] font-bold w-[320px] lg:w-[762px] leading-[1]">Inovação, Técnica e <span className="text-[#DAA520] text-[32px] lg:text-[75px] font-bold ">Sensibilidade</span></h1>
-                    <p className="text-[#D8D8D8] text-[12px] lg:text-[23px] w-[256px] lg:w-[700px] text-justify mt-2">
-                        Transformamos espaços com soluções inteligentes, sustentáveis e humanas. <span className="mt-2 block lg:inline">Unimos engenharia e arquitetura com o cuidado que só uma família pode oferecer.</span>
-                    </p>
-                    <div className="flex mt-7 lg:mt-14 lg:flex-row-reverse lg:justify-start lg:absolute lg:left-10 gap-2 lg:gap-5">
-                        <button className="border border-[#DAA520] text-[#DAA520] font-bold text-[13px] lg:text-[21px] py-1 px-1.5 lg:px-8 lg:transition lg:hover:scale-105">
-                            VER PROJETOS
-                        </button>
-                        <button className="bg-[#DAA520] font-bold text-[13px] lg:text-[21px] py-1 px-1.5 lg:px-8 lg:transition lg:hover:scale-105">
-                            SOLICITAR ORÇAMENTO
-                        </button>
+            <main>
+                {/* Hero */}
+                <section className="relative w-full h-[360px] lg:h-[650px]">
+                    <Image src="/hero-desktop.webp" alt="Hero Image" fill priority fetchPriority="high" className="" sizes="100vw"/>
+                    <div className="absolute top-[125px] lg:top-[200px] w-full px-7 lg:px-10">
+                        <h1 className="text-white text-[32px] lg:text-[75px] font-bold w-[320px] lg:w-[762px] leading-[1]">Inovação, Técnica e <span className="text-[#DAA520] text-[32px] lg:text-[75px] font-bold ">Sensibilidade</span></h1>
+                        <p className="text-[#D8D8D8] text-[12px] lg:text-[23px] w-[256px] lg:w-[700px] text-justify mt-2">
+                            Transformamos espaços com soluções inteligentes, sustentáveis e humanas. <span className="mt-2 block lg:inline">Unimos engenharia e arquitetura com o cuidado que só uma família pode oferecer.</span>
+                        </p>
+                        <HeroButtons/>
                     </div>
                 </section>
-            </div>
 
-            <main>
                 {/*Quem Somos*/}
-                <section className="bg-[#07090A] w-full py-5 lg:py-10 pb-8">
+                <section id="about" className="bg-[#07090A] w-full py-5 lg:py-10 pb-8">
                     <h1 className="text-[#DAA520] text-[17px] lg:text-[22px] text-center lg:text-start font-medium px-7 lg:px-10">QUEM SOMOS</h1>
                     <div className="flex flex-col lg:flex-row justify-between pt-4 lg:pt-0">
                         <section className="flex gap-7 lg:gap-5 lg:flex-col px-7 lg:px-10">
@@ -59,9 +52,11 @@ export default function Home() {
                                 <br />
                                 Atuamos nas áreas de Arquitetura, Engenharia e Automação Residencial e Empresarial, oferecendo soluções que unem técnica, inovação e sensibilidade em cada projeto. Nosso propósito é transformar espaços com soluções inteligentes, sustentáveis e humanas, criando ambientes que acolhem, funcionam e inspiram.                        
                             </p>
-                            <button className="hidden bg-[#DAA520] font-bold text-[17px] py-1 w-[200px] transition hover:scale-105 lg:block">
-                                CONHEÇA MAIS
-                            </button>
+                            <Link href={"/about"}>
+                                <button className="hidden bg-[#DAA520] font-bold text-[17px] py-1 w-[200px] transition hover:scale-105 lg:block">
+                                    CONHEÇA MAIS
+                                </button>
+                            </Link>
                         </section>
 
                         <div className="flex lg:flex-col gap-5 lg:gap-10 pt-6 pl-7 lg:px-10 lg:pt-0 overflow-auto scrollbar-hide">
@@ -77,14 +72,16 @@ export default function Home() {
                         </div>
                     </div>
                     <div className="lg:hidden w-full flex justify-center pt-8">
-                        <button className="border border-[#DAA520] text-[#DAA520] font-bold text-[13px] py-1 px-10">
-                            CONHEÇA MAIS
-                        </button>
+                        <Link href={"/about"}>
+                            <button className="border border-[#DAA520] text-[#DAA520] font-bold text-[13px] py-1 px-10">
+                                CONHEÇA MAIS
+                            </button>
+                        </Link>
                     </div>
                 </section>
 
                 {/*Nossos Serviços*/}
-                <section className="bg-[#0B0E10] min-h-[400px] w-full flex flex-col justify-center items-center overflow-hidden py-5 lg:py-10">
+                <section id="services" className="bg-[#0B0E10] min-h-[400px] w-full flex flex-col justify-center items-center overflow-hidden py-5 lg:py-10">
                     <h1 className="text-[#DAA520] text-[17px] lg:text-[22px] text-center lg:text-start font-medium px-7 lg:px-10">NOSSOS SERVIÇOS</h1>
                     <h2 className="text-white text-center font-bold mt-2 lg:text-[30px]">
                         Soluções Completas em
@@ -95,13 +92,15 @@ export default function Home() {
                     <img src="/line.svg" alt="Line Icon" height={10} width={150} loading="eager" decoding="async" fetchPriority="low" className="hidden lg:block mt-2"/>
 
                     <ServicesCarousel/>
-                    <button className="hidden lg:block text-[#0B0E10] bg-[#DAA520] mt-10 font-bold text-[17px] py-1 w-[300px] transition hover:scale-105">
-                        CONHEÇA NOSSOS SERVIÇOS
-                    </button>
+                    <Link href={"/services"}>
+                        <button className="hidden lg:block text-[#0B0E10] bg-[#DAA520] mt-10 font-bold text-[17px] py-1 w-[300px] transition hover:scale-105">
+                            CONHEÇA NOSSOS SERVIÇOS
+                        </button>
+                    </Link>
                 </section>
 
                 {/*Portfólio*/}
-                <section className="bg-[#06090B] min-h-[400px] w-full px-7 lg:px-10 py-5 lg:py-10 flex flex-col justify-center items-center">
+                <section id="projects" className="bg-[#06090B] min-h-[400px] w-full px-7 lg:px-10 py-5 lg:py-10 flex flex-col justify-center items-center">
                     <h1 className="text-[#DAA520] text-[17px] lg:text-[22px] text-center lg:text-start font-medium px-7 lg:px-10">PORTFÓLIO </h1>
                     <h2 className="text-white text-center font-bold mt-2 lg:text-[30px]">
                         Projetos <span className="text-[#DAA520]">Recentes</span>
@@ -109,13 +108,15 @@ export default function Home() {
                     <img src="/line.svg" alt="Line Icon" height={10} width={100 } loading="eager" decoding="async" fetchPriority="low" className="lg:hidden"/>
                     <img src="/line.svg" alt="Line Icon" height={10} width={150} loading="eager" decoding="async" fetchPriority="low" className="hidden lg:block mt-2"/>
                     <ProjectsCarousel/>
-                    <button className="hidden lg:block text-[#0B0E10] bg-[#DAA520] mt-10 font-bold text-[17px] py-1 w-[300px] transition hover:scale-105">
-                        VER PORTFÓLIO COMPLETO
-                    </button>
+                    <Link href={"/projects"}>
+                        <button className="hidden lg:block text-[#0B0E10] bg-[#DAA520] mt-10 font-bold text-[17px] py-1 w-[300px] transition hover:scale-105">
+                            VER PORTFÓLIO COMPLETO
+                        </button>
+                    </Link>
                 </section>
 
                 {/*Parceiros*/}
-                <section className="bg-[#0B0E10] min-h-[400px] w-full px-7 lg:px-10 py-5 lg:py-10 flex flex-col justify-center items-center">
+                <section id="partners" className="bg-[#0B0E10] min-h-[400px] w-full px-7 lg:px-10 py-5 lg:py-10 flex flex-col justify-center items-center">
                     <h1 className="text-[#DAA520] text-[17px] lg:text-[22px] text-center lg:text-start font-medium px-7 lg:px-10">PARCEIROS </h1>
                     <h2 className="text-white text-center font-bold mt-2 lg:text-[30px]">
                         Parcerias de <span className="text-[#DAA520]">Confiança</span>
@@ -131,7 +132,7 @@ export default function Home() {
                 </section>
 
                 {/*Fale Conosco*/}
-                <section className="bg-[#010101] w-full px-7 lg:px-10 py-5 lg:py-10">
+                <section id="contact" className="bg-[#010101] w-full px-7 lg:px-10 py-5 lg:py-10">
                     <h1 className="text-[#DAA520] text-[17px] lg:text-[22px] lg:text-start font-medium ">FALE CONCOSCO</h1>
                     <div className="lg:flex justify-between">
                         <div className="lg:max-w-[390px]">
@@ -189,6 +190,5 @@ export default function Home() {
                     </div>
                 </section>
             </main>
-        </>
     );
 }

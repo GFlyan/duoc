@@ -2,11 +2,11 @@
 
 import { useState } from "react";   
 import Link from "next/link";
-//import { IoMenu, IoArrowBackSharp } from "react-icons/io5";
+import Image from "next/image";
 
 type LinkModel = {
     name: string,
-    href: string;
+    id: string;
 }
 
 type MenuProps = {
@@ -14,24 +14,26 @@ type MenuProps = {
 }
 
 export default function MenuMobile({links}: MenuProps) {
-    const [iconState, setIconState] = useState('block');
-    const [menuState, setMenuState] = useState('hidden');
+    const [active, setActive] = useState(false);
 
-    function toggleMenu() {
-        if (menuState === 'hidden') {
-            setIconState('hidden');
-            setMenuState('flex flex-col');
-            document.body.style.overflow = 'hidden';
-            const header = document.getElementById('header');
-            header.style.padding = '0px';
-            const logo = document.getElementById('logo');
-            logo.style.display = 'none';
-        } else {
-            setIconState("block");
-            setMenuState('hidden');
-            document.body.style.overflow = 'auto';
-        }
+    function openMenu() {
+        setActive(true);
+        document.body.classList.add("overflow-hidden");
     }
+
+    function closeMenu() {
+        setActive(false);
+        document.body.classList.remove("overflow-hidden");
+    }
+
+    function travelTo(id:string) {
+        closeMenu();
+        document.querySelector(`#${id}`)?.scrollIntoView({
+            behavior: "smooth",
+        });
+    };
+
+    
 
     return(
         <div className="lg:hidden">
@@ -43,21 +45,23 @@ export default function MenuMobile({links}: MenuProps) {
                 loading="eager"
                 decoding="async"
                 fetchPriority="low"
-                className={`${iconState} cursor-pointer`}
-                onClick={toggleMenu}
+                className={active?"hidden":"cursor-pointer"}
+                onClick={openMenu}
                 />            
-                <menu className={`${menuState} h-screen w-screen bg-black justify-center items-center`}>
-                <div  className="text-[#DAA520] cursor-pointer mb-10 transition hover:scale-105 bg-white h-[30px] w-[30px]" onClick={toggleMenu}/>
-                {links.map( 
-                    (link) => 
-                        <Link key={link.name} href={`${link.href}`} className="text-white">{link.name}</Link>
-                )}
-                <Link href="/" className="transition hover:scale-105">
-                    <button className="px-2.5 py-1.5 bg-[#DAA520] text-white">
+                <menu className={active?"absolute h-screen w-full top-0 left-0 justify-center items-center bg-transparent/80 lg:backdrop-blur-md flex flex-col  gap-5 ":"hidden"}>
+                <div className="py-5 px-7 absolute top-0 left-0 flex justify-between w-full">
+                    <Image src="/logo-icon.svg" alt="Logo" width={150} height={75} className="lg:hidden"></Image>  
+                    
+                    <img src="/close.svg" width={20} height={20} loading="eager" decoding="async" fetchPriority="low" className="cursor-pointer" onClick={closeMenu}/>
+                </div>
+                    {links.map( 
+                        (link) => 
+                            <li key={link.name} ><button className="text-white cursor-pointer" onClick={()=>travelTo(link.id)}>{link.name}</button></li>
+                    )}
+                    <button className="px-2.5 py-1.5 bg-[#DAA520] text-black font-bold" onClick={()=>travelTo("contact")}>
                         SOLICITAR ORÇAMENTO
                     </button>
-                </Link>
-            </menu>
+                </menu>
         </div>
     )   
 }
