@@ -52,10 +52,8 @@ export default function Home() {
                                 <br />
                                 Atuamos nas áreas de Arquitetura, Engenharia e Automação Residencial e Empresarial, oferecendo soluções que unem técnica, inovação e sensibilidade em cada projeto. Nosso propósito é transformar espaços com soluções inteligentes, sustentáveis e humanas, criando ambientes que acolhem, funcionam e inspiram.                        
                             </p>
-                            <Link href={"/about"}>
-                                <button className="hidden bg-[#DAA520] font-bold text-[17px] py-1 w-[200px] transition hover:scale-105 lg:block">
+                            <Link href={"/about"} className="hidden bg-[#DAA520] font-bold text-[17px] py-1 w-[200px] transition hover:scale-105 lg:block text-center">
                                     CONHEÇA MAIS
-                                </button>
                             </Link>
                         </section>
 
@@ -72,10 +70,8 @@ export default function Home() {
                         </div>
                     </div>
                     <div className="lg:hidden w-full flex justify-center pt-8">
-                        <Link href={"/about"}>
-                            <button className="border border-[#DAA520] text-[#DAA520] font-bold text-[13px] py-1 px-10">
+                        <Link href={"/about"} className="border border-[#DAA520] text-[#DAA520] font-bold text-[13px] py-1 px-10 text-center">
                                 CONHEÇA MAIS
-                            </button>
                         </Link>
                     </div>
                 </section>
@@ -92,10 +88,8 @@ export default function Home() {
                     <img src="/line.svg" alt="Line Icon" height={10} width={150} loading="eager" decoding="async" fetchPriority="low" className="hidden lg:block mt-2"/>
 
                     <ServicesCarousel/>
-                    <Link href={"/services"}>
-                        <button className="hidden lg:block text-[#0B0E10] bg-[#DAA520] mt-10 font-bold text-[17px] py-1 w-[300px] transition hover:scale-105">
+                    <Link href={"/services"} className="hidden lg:block text-[#0B0E10] bg-[#DAA520] mt-10 font-bold text-[17px] py-1 w-[300px] transition hover:scale-105 text-center">
                             CONHEÇA NOSSOS SERVIÇOS
-                        </button>
                     </Link>
                 </section>
 
@@ -108,10 +102,8 @@ export default function Home() {
                     <img src="/line.svg" alt="Line Icon" height={10} width={100 } loading="eager" decoding="async" fetchPriority="low" className="lg:hidden"/>
                     <img src="/line.svg" alt="Line Icon" height={10} width={150} loading="eager" decoding="async" fetchPriority="low" className="hidden lg:block mt-2"/>
                     <ProjectsCarousel/>
-                    <Link href={"/projects"}>
-                        <button className="hidden lg:block text-[#0B0E10] bg-[#DAA520] mt-10 font-bold text-[17px] py-1 w-[300px] transition hover:scale-105">
+                    <Link href={"/projects"} className="hidden lg:block text-[#0B0E10] bg-[#DAA520] mt-10 font-bold text-[17px] py-1 w-[300px] transition hover:scale-105 text-center">
                             VER PORTFÓLIO COMPLETO
-                        </button>
                     </Link>
                 </section>
 
@@ -154,7 +146,7 @@ export default function Home() {
                                 ))}
                             </div>
                         </div>
-                        <form action="" className="px-7 pb-7 pt-3.5 lg:py-5 border border-[#1F1F1F] bg-[#0E1011] flex flex-col gap-3 rounded-lg lg:min-w-[500px] lg:justify-center">
+                        <form action="/" method="POST" className="px-7 pb-7 pt-3.5 lg:py-5 border border-[#1F1F1F] bg-[#0E1011] flex flex-col gap-3 rounded-lg lg:min-w-[500px] lg:justify-center">
                             <div>
                                 <label htmlFor="name" className="text-[#D8D8D8] font-bold text-[9.5px] lg:text-[14px]">Nome Completo</label>
                                 <input type="text" id="name" autoComplete="name" inputMode="text" placeholder="Seu nome" className="w-full border border-[#464646] bg-[#0E1011] rounded-md text-[#D8D8D8] mt-1.5 pl-2 text-[9.5px] lg:text-[14px] h-[30px] lg:h-[45px] focus:outline-none"/>

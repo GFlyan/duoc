@@ -78,7 +78,7 @@
 }
 
 .scrollbar-hide::-webkit-scrollbar {
-  display: none;             /* Chrome, Safari */
+  display: none;             
 }
 
 .scrollbar-thin {

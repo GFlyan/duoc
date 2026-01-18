@@ -26,15 +26,6 @@ export default function MenuMobile({links}: MenuProps) {
         document.body.classList.remove("overflow-hidden");
     }
 
-    function travelTo(id:string) {
-        closeMenu();
-        document.querySelector(`#${id}`)?.scrollIntoView({
-            behavior: "smooth",
-        });
-    };
-
-    
-
     return(
         <div className="lg:hidden">
                 <img
@@ -56,11 +47,11 @@ export default function MenuMobile({links}: MenuProps) {
                 </div>
                     {links.map( 
                         (link) => 
-                            <li key={link.name} ><button className="text-white cursor-pointer" onClick={()=>travelTo(link.id)}>{link.name}</button></li>
+                            <Link href={`/#${link.id}`} key={link.name}  className="text-white cursor-pointer" onClick={closeMenu}>{link.name}</Link>
                     )}
-                    <button className="px-2.5 py-1.5 bg-[#DAA520] text-black font-bold" onClick={()=>travelTo("contact")}>
+                    <Link href="/#contact" className="px-2.5 py-1.5 bg-[#DAA520] text-black font-bold text-center cursor-pointer" onClick={closeMenu}>
                         SOLICITAR ORÇAMENTO
-                    </button>
+                    </Link>
                 </menu>
         </div>
     )   

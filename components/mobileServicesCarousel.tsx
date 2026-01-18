@@ -95,6 +95,7 @@ const ListComponents = [
     <div className="w-full flex flex-col justify-center items-center gap-5">
       <div className="relative flex justify-center items-center gap-5">
           <button onClick={() => handleChangePrevious()} className={(left|| right)?"hidden" : "absolute left-[100px] z-40 h-[175px] w-[70px] cursor-pointer"}>
+            &#8203;
           </button> 
           <div className={right? "relative left-[100px] z-20 transition duration-350 translate-x-[82.5px] scale-x-[1.15] scale-y-[1.28]" : left ? "relative left-[100px] z-0 transition duration-350 translate-x-14 blur-[1.25px]" : "relative left-[100px] z-10 blur-[1.25px]"}>
             <SecondaryServiceCard
@@ -138,6 +139,7 @@ const ListComponents = [
               imageAlt={ListComponents[hiddenPos].imageAlt}/>
           </div>
           <button onClick={() => handleChangeNext()} className={(left|| right)?"hidden" : "absolute right-[100px] z-40 h-[175px] w-[70px] cursor-pointer"}>
+            &#8203;
           </button>   
       </div>
       <div className="flex gap-2">

@@ -18,8 +18,8 @@ export function PrimaryServiceCard({title, text, item1, item2, item3, imageSrc, 
                 <h1 className="absolute bottom-0 text-white font-bold ml-2.5 text-[13px]">{title}</h1>
             </div>
             <section className="px-2.5 mt-4 p">
-                <p className="text-[9px] text-gray-500">{text}</p>
-                <ul className="text-[9px] text-gray-500 list-disc ml-5 mt-3 font-bold">
+                <p className="text-[9px] text-gray-400">{text}</p>
+                <ul className="text-[9px] text-gray-400 list-disc ml-5 mt-3 font-bold">
                     <li className="marker:text-amber-400">{item1}</li>
                     <li className="marker:text-amber-400">{item2}</li>
                     <li className="marker:text-amber-400">{item3}</li>
@@ -43,8 +43,8 @@ export function SecondaryServiceCard({title, text, item1, item2, item3, imageSrc
                 <h1 className="absolute bottom-0 text-white font-bold ml-2 text-[11px]">{title}</h1>
             </div>
             <section className="px-2 pt-3">
-                <p className="text-[7.5px] text-gray-500">{text}</p>
-                <ul className="text-[7.5px] text-gray-500 list-disc ml-[18px] mt-1.5 font-bold">
+                <p className="text-[7.5px] text-gray-400">{text}</p>
+                <ul className="text-[7.5px] text-gray-400 list-disc ml-[18px] mt-1.5 font-bold">
                     <li className="marker:text-amber-400">{item1}</li>
                     <li className="marker:text-amber-400">{item2}</li>
                     <li className="marker:text-amber-400">{item3}</li>
@@ -70,8 +70,8 @@ export function ServiceCard({title, text, item1, item2, item3, imageSrc, imageAl
                 <h1 className="absolute bottom-0 text-white font-bold ml-5">{title}</h1>
             </div>
             <section className="px-5 mt-5">
-                <p className="text-[13px] text-gray-500">{text}</p>
-                <ul className="text-[13px] text-gray-500 list-disc ml-5 mt-4 font-bold">
+                <p className="text-[13px] text-gray-400">{text}</p>
+                <ul className="text-[13px] text-gray-400 list-disc ml-5 mt-4 font-bold">
                     <li className="marker:text-amber-400">{item1}</li>
                     <li className="marker:text-amber-400">{item2}</li>
                     <li className="marker:text-amber-400">{item3}</li>
